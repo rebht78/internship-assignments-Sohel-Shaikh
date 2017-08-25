@@ -1,0 +1,200 @@
+* Committing Changes
+
+1. git commit
+
+to commit the changes 
+
+2. git status
+
+to check the status 
+
+* Changes, not files
+
+1. Git concentrates on the changes to a file, not the file itself. 
+Let's check whether it is true or not?
+
+git add index.html
+
+After adding file, if I check for status after making changes we get it:
+
+ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   index.html
+
+2.
+git commit -m "Added HTML, HEAD and BODY Tags!"
+
+3.
+when we check again for:
+
+git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+4.
+git add .
+
+to add current directory
+
+* History
+
+1.
+git log 
+
+to view all the changes made
+
+2.
+One line history:
+
+git log --pretty=oneline
+
+3.
+git log --pretty=oneline --since='5 minutes ago'
+
+4.
+git log --pretty=oneline --until='1 minutes ago'
+
+5.
+git log --pretty=oneline --max-count=1
+
+6.
+git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+
+* Aliases
+
+1.
+git config --global alias.co checkout
+
+2.
+git config --global alias.ci commit
+
+3.
+git config --global alias.st status
+
+4.
+git config --global alias.br branch
+
+5.
+git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+
+6.
+git config --global alias.type 'cat-file -t'
+
+7.
+git config --global alias.dump 'cat-file -p'
+
+* Getting older versions
+
+1.
+git hist
+
+to get log in pretty custom format
+
+2. 
+git checkout ef2cfca
+
+Note: checking out 'ef2cfca'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at ef2cfca... First Saving of File
+
+3.
+cat index.html
+
+<p>
+  Hello, I am learning Git....It&apos;s awesome!
+</p>
+
+4.
+git checkout master
+
+Previous HEAD position was ef2cfca... First Saving of File
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+
+5.
+now checking content of index.html
+
+cat index.html
+
+* Tagging Versions
+
+1. 
+git tag version1
+
+2. 
+git checkout version1^
+
+Note: checking out 'version1^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 603e632... Addition of third file not related to first and second
+
+3.
+cat index.html
+
+4.
+git tag version1-beta
+
+5.
+git checkout version1
+
+6.
+git checkout version1-beta
+
+7.
+git tag
+
+to view all the tags created.
+
+* Discarding local changes
+1.
+
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+2.
+git checkout index.html
+
+3.
+git status
+
+4. 
+cat index.html
+

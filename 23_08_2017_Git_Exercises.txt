@@ -1,0 +1,87 @@
+1. git config --global user.name "Sohel Shaikh"
+
+2. git config --global user.email "rebht78@gmail.com"
+
+3. Creating a git repository from scratch:
+
+mkdir hello
+cd hello
+touch index.html
+
+4. Running the git init in order to create a git repo from that directory:
+
+git init
+Initialized empty Git repository in G:/git_tutorial/work/hello/.git/
+
+5. Adding index.html page to git repo:
+
+git add index.html
+
+git commit -m "First Saving of File"
+
+* Checking the status of the repository
+
+1. git status
+
+to check the current status of the repository
+
+* Making Changes
+
+1. First I make some changes to index.html page
+
+2. After making changes, I run command:
+
+git status
+
+Got the following output:
+
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+* Staging the Changes
+
+1. Command for git to stage changes:
+
+git add index.html
+
+2. checking the status of repo after it:
+
+git status
+
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   index.html
+
+3. commit index.html of changes:
+
+git commit -m "Changes to index.html, addition of p tag"
+
+* Staging and Committing
+
+1. 
+git add first.html
+git add second.html
+git commit -m "Addition of first and second"
+
+2. 
+git add third.html
+
+ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   third.html
+
+3. 
+git commit -m "Addition of third file not related to first and second"
+
+
