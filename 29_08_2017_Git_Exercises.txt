@@ -1,0 +1,77 @@
+* Changes to master branch
+
+1.
+
+git checkout master
+
+2.
+git add README
+
+3.
+git commit -m "Added README"
+
+* View the different branches
+
+1.
+
+git hist --all
+
+* Merging
+
+1.
+
+git checkout style
+
+2.
+git merge master
+
+3.
+git hist --all
+
+* Creating a conflict
+
+1.
+
+git add lib/index.html
+
+2.
+git commit -m "No Style in index"
+
+3.
+git hist --all
+
+* Resolving Conflicts 
+
+1.
+git checkout style
+
+2.
+git merge master
+
+* Relocating as an alternative to merging
+
+1.
+To differentiate between relocating and merging; using relocation as an alternative to merging.
+
+* Resetting the style branch
+
+1.
+git checkout style
+
+2.
+git hist
+
+3.
+git reset --hard 2c7dd6c
+
+* Reset of the Master branch
+
+1.
+git checkout master
+
+2.
+git hist
+
+3.
+git reset --hard 2c7dd6c
+
