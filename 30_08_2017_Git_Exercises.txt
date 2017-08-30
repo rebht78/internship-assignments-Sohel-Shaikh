@@ -1,0 +1,408 @@
+
+aziz@Faizal MINGW32 ~
+$ cd g:/git_tutorial/work/hello
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git pull origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/rebht78/internship-assignments-Sohel-Shaikh
+ * branch            master     -> FETCH_HEAD
+   d33c7ed..0798748  master     -> origin/master
+Updating d33c7ed..0798748
+Fast-forward
+ 29_08_2017_Git_Exercises.txt | 77 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 77 insertions(+)
+ create mode 100644 29_08_2017_Git_Exercises.txt
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git checkout master
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git add 30_08_2017_Git_Exercises.txt
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git checkout style
+Switched to branch 'style'
+A       30_08_2017_Git_Exercises.txt
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git rebase master
+
+Cannot rebase: You have unstaged changes.
+Additionally, your index contains uncommitted changes.
+Please commit or stash them.
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git commit -m "Committed"
+[style 24a962f] Committed
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 30_08_2017_Git_Exercises.txt
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git rebase master
+Cannot rebase: You have unstaged changes.
+Please commit or stash them.
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        30_08_2017_Git_Exercises.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git status
+On branch style
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   30_08_2017_Git_Exercises.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bash.exe.stackdump
+        sh.exe.stackdump
+        vim.exe.stackdump
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git add 30_08_2017_Git_Exercises.txt
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git merge style
+Already up-to-date.
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ cd ..
+
+aziz@Faizal MINGW32 /g/git_tutorial/work
+$ pwd
+/g/git_tutorial/work
+
+aziz@Faizal MINGW32 /g/git_tutorial/work
+$ ls
+hello/
+
+aziz@Faizal MINGW32 /g/git_tutorial/work
+$ git clone hello cloned_hello
+Cloning into 'cloned_hello'...
+done.
+
+aziz@Faizal MINGW32 /g/git_tutorial/work
+$ ls
+cloned_hello/  hello/
+
+aziz@Faizal MINGW32 /g/git_tutorial/work
+$ cd cloned_hello
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ ls
+23_08_2017_Git_Exercises.txt  first.html  second.html
+24_08_2017_Git_Exercises.txt  hello.html  third.html
+25_08_2017_Git_Exercises.txt  lib/
+30_08_2017_Git_Exercises.txt  readme
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git hist --all
+* 24a962f 2017-08-30 | Committed (HEAD -> style, origin/style, origin/HEAD) [Sohel Shaikh]
+| * 0798748 2017-08-29 | Exercise 29-08-2017 (origin/master) [Sohel Shaikh]
+| *   d33c7ed 2017-08-29 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh [Sohel Shaikh]
+| |\
+|/ /
+| * bf4aadc 2017-08-28 | Exercises on 28-08-2017 [Sohel Shaikh]
+| * c0663cb 2017-08-28 | deleted a file, file name was wrong [Sohel Shaikh]
+| * e6b0bd0 2017-08-28 | Exercises completed on 26-08 [Sohel Shaikh]
+* | 2c7dd6c 2017-08-29 | No Style in index [Sohel Shaikh]
+* | c6a8d31 2017-08-29 | Added README [Sohel Shaikh]
+|/
+*   1274d71 2017-08-28 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh into style [Sohel Shaikh]
+|\
+| * ba22c29 2017-08-25 | Exercises completed 25-08-2017 [Sohel Shaikh]
+* | 7fc73be 2017-08-28 | index referring to style [Sohel Shaikh]
+* | a749ea9 2017-08-28 | Added style.css [Sohel Shaikh]
+* | 0d0e0a8 2017-08-28 | Added commit files for structure [Sohel Shaikh]
+* | ac4b94e 2017-08-28 | Moved index.html to lib folder [Sohel Shaikh]
+|/
+*   9873eed 2017-08-25 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh [Sohel Shaikh]
+|\
+| * 96fb673 2017-08-24 | Add files via upload [Sohel Shaikh]
+| * 45ad6f4 2017-08-24 | Last Commit of the dat [Sohel Shaikh]
+| *   4ffdf4b 2017-08-24 | Merger with branch [Sohel Shaikh]
+| |\
+| | * 3aaf230 2017-08-23 | Exercises completed on 23-Aug-2017 [Sohel Shaikh]
+* | | b1207fd 2017-08-25 | Adding author name/email in index page [Sohel Shaikh]
+|/ /
+* | a75985d 2017-08-24 | Added HTML, HEAD and BODY Tags! (tag: version1) [Sohel Shaikh]
+|/
+* 603e632 2017-08-23 | Addition of third file not related to first and second (tag: version1-beta) [Sohel Shaikh]
+* 98b8b65 2017-08-23 | Addition of first and second pages [Sohel Shaikh]
+* b80972e 2017-08-23 | Changes to index.html, addition of p tag [Sohel Shaikh]
+* ef2cfca 2017-08-23 | First Saving of File [Sohel Shaikh]
+* | 7fc73be 2017-08-28 | index referring to style [Sohel Shaikh]
+* | a749ea9 2017-08-28 | Added style.css [Sohel Shaikh]
+* | 0d0e0a8 2017-08-28 | Added commit files for structure [Sohel Shaikh]
+* | ac4b94e 2017-08-28 | Moved index.html to lib folder [Sohel Shaikh]
+|/
+*   9873eed 2017-08-25 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh [Sohel Shaikh]
+|\
+| * 96fb673 2017-08-24 | Add files via upload [Sohel Shaikh]
+| * 45ad6f4 2017-08-24 | Last Commit of the dat [Sohel Shaikh]
+| *   4ffdf4b 2017-08-24 | Merger with branch [Sohel Shaikh]
+| |\
+| | * 3aaf230 2017-08-23 | Exercises completed on 23-Aug-2017 [Sohel Shaikh]
+* | | b1207fd 2017-08-25 | Adding author name/email in index page [Sohel Shaikh]
+|/ /
+* | a75985d 2017-08-24 | Added HTML, HEAD and BODY Tags! (tag: version1) [Sohel Shaikh]
+|/
+* 603e632 2017-08-23 | Addition of third file not related to first and second (tag: version1-beta) [Sohel Shaikh]
+* 98b8b65 2017-08-23 | Addition of first and second pages [Sohel Shaikh]
+* b80972e 2017-08-23 | Changes to index.html, addition of p tag [Sohel Shaikh]
+* ef2cfca 2017-08-23 | First Saving of File [Sohel Shaikh]
+(END)Stopped
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git remote
+origin
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git remote show origin
+* remote origin
+  Fetch URL: G:/git_tutorial/work/hello
+  Push  URL: G:/git_tutorial/work/hello
+  HEAD branch: style
+  Remote branches:
+    master tracked
+    style  tracked
+  Local branch configured for 'git pull':
+    style merges with remote style
+  Local ref configured for 'git push':
+    style pushes to style (up to date)
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git branch
+* style
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git branch -a
+* style
+  remotes/origin/HEAD -> origin/style
+  remotes/origin/master
+  remotes/origin/style
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ cd ../hello
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git add readme
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git commit -m "Changed readme in original repo"
+[style d45d562] Changed readme in original repo
+ 1 file changed, 14 insertions(+)
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ cd ../cloned_hello
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git fetch
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From G:/git_tutorial/work/hello
+   24a962f..d45d562  style      -> origin/style
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git hist --all
+* d45d562 2017-08-30 | Changed readme in original repo (origin/style, origin/HEAD) [Sohel Shaikh]
+* 24a962f 2017-08-30 | Committed (HEAD -> style) [Sohel Shaikh]
+| * 0798748 2017-08-29 | Exercise 29-08-2017 (origin/master) [Sohel Shaikh]
+| *   d33c7ed 2017-08-29 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh [Sohel Shaikh]
+| |\
+|/ /
+| * bf4aadc 2017-08-28 | Exercises on 28-08-2017 [Sohel Shaikh]
+| * c0663cb 2017-08-28 | deleted a file, file name was wrong [Sohel Shaikh]
+| * e6b0bd0 2017-08-28 | Exercises completed on 26-08 [Sohel Shaikh]
+* | 2c7dd6c 2017-08-29 | No Style in index [Sohel Shaikh]
+* | c6a8d31 2017-08-29 | Added README [Sohel Shaikh]
+|/
+*   1274d71 2017-08-28 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh into style [Sohel Shaikh]
+|\
+| * ba22c29 2017-08-25 | Exercises completed 25-08-2017 [Sohel Shaikh]
+* | 7fc73be 2017-08-28 | index referring to style [Sohel Shaikh]
+* | a749ea9 2017-08-28 | Added style.css [Sohel Shaikh]
+* | 0d0e0a8 2017-08-28 | Added commit files for structure [Sohel Shaikh]
+* | ac4b94e 2017-08-28 | Moved index.html to lib folder [Sohel Shaikh]
+|/
+*   9873eed 2017-08-25 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh [Sohel Shaikh]
+|\
+| * 96fb673 2017-08-24 | Add files via upload [Sohel Shaikh]
+| * 45ad6f4 2017-08-24 | Last Commit of the dat [Sohel Shaikh]
+| *   4ffdf4b 2017-08-24 | Merger with branch [Sohel Shaikh]
+| |\
+| | * 3aaf230 2017-08-23 | Exercises completed on 23-Aug-2017 [Sohel Shaikh]
+* | | b1207fd 2017-08-25 | Adding author name/email in index page [Sohel Shaikh]
+|/ /
+* | a75985d 2017-08-24 | Added HTML, HEAD and BODY Tags! (tag: version1) [Sohel Shaikh]
+|/
+* 603e632 2017-08-23 | Addition of third file not related to first and second (tag: version1-beta) [Sohel Shaikh]
+* 98b8b65 2017-08-23 | Addition of first and second pages [Sohel Shaikh]
+* b80972e 2017-08-23 | Changes to index.html, addition of p tag [Sohel Shaikh]
+* ef2cfca 2017-08-23 | First Saving of File [Sohel Shaikh]
+* | 7fc73be 2017-08-28 | index referring to style [Sohel Shaikh]
+* | a749ea9 2017-08-28 | Added style.css [Sohel Shaikh]
+* | 0d0e0a8 2017-08-28 | Added commit files for structure [Sohel Shaikh]
+* | ac4b94e 2017-08-28 | Moved index.html to lib folder [Sohel Shaikh]
+|/
+*   9873eed 2017-08-25 | Merge branch 'master' of https://github.com/rebht78/internship-assignments-Sohel-Shaikh [Sohel Shaikh]
+|\
+| * 96fb673 2017-08-24 | Add files via upload [Sohel Shaikh]
+| * 45ad6f4 2017-08-24 | Last Commit of the dat [Sohel Shaikh]
+| *   4ffdf4b 2017-08-24 | Merger with branch [Sohel Shaikh]
+| |\
+| | * 3aaf230 2017-08-23 | Exercises completed on 23-Aug-2017 [Sohel Shaikh]
+* | | b1207fd 2017-08-25 | Adding author name/email in index page [Sohel Shaikh]
+|/ /
+* | a75985d 2017-08-24 | Added HTML, HEAD and BODY Tags! (tag: version1) [Sohel Shaikh]
+|/
+* 603e632 2017-08-23 | Addition of third file not related to first and second (tag: version1-beta) [Sohel Shaikh]
+* 98b8b65 2017-08-23 | Addition of first and second pages [Sohel Shaikh]
+* b80972e 2017-08-23 | Changes to index.html, addition of p tag [Sohel Shaikh]
+* ef2cfca 2017-08-23 | First Saving of File [Sohel Shaikh]
+(END)Stopped
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ cat readme
+This is a read me file for git folder.
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ git push origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'G:/git_tutorial/work/hello'
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/cloned_hello (style)
+$ cd ../hello
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git push origin master
+Username for 'https://github.com': rebht78
+Everything up-to-date
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git coomit -m "Exercises on 30-08"
+git: 'coomit' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git commit -m "Exercises on 30-08"
+On branch style
+Changes not staged for commit:
+        modified:   30_08_2017_Git_Exercises.txt
+
+Untracked files:
+        bash.exe.stackdump
+        sh.exe.stackdump
+        vim.exe.stackdump
+
+no changes added to commit
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        30_08_2017_Git_Exercises.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git commit -m "Exercises on 30-08-2017"
+On branch style
+Changes not staged for commit:
+        modified:   30_08_2017_Git_Exercises.txt
+
+Untracked files:
+        bash.exe.stackdump
+        sh.exe.stackdump
+        vim.exe.stackdump
+
+no changes added to commit
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git checkout style
+Already on 'style'
+M       30_08_2017_Git_Exercises.txt
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git add 30_08_2017_Git_Exercises.txt
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git commit -m "Exercises on 30-08"
+[style f9d948f] Exercises on 30-08
+ 1 file changed, 73 insertions(+)
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (style)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git commit -m "Exercises on 30-08"
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Untracked files:
+        bash.exe.stackdump
+        sh.exe.stackdump
+        vim.exe.stackdump
+
+nothing added to commit but untracked files present
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git push origin master
+Username for 'https://github.com': rebht78
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/rebht78/internship-assignments-Sohel-Shaikh.git/'
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git push origin master
+Username for 'https://github.com': rebht78
+Everything up-to-date
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git remote show origin
+* remote origin
+  Fetch URL: https://github.com/rebht78/internship-assignments-Sohel-Shaikh.git
+  Push  URL: https://github.com/rebht78/internship-assignments-Sohel-Shaikh.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git pull origin master
+From https://github.com/rebht78/internship-assignments-Sohel-Shaikh
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git push origin master
+Username for 'https://github.com': rebht78
+Everything up-to-date
+
+aziz@Faizal MINGW32 /g/git_tutorial/work/hello (master)
+$ git add 30_08_2017_Git_Exercises.txt
+fatal: pathspec '30_08_2017_Git_Exercises.txt' did not match any files
