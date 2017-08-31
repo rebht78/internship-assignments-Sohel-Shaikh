@@ -1,0 +1,58 @@
+* Remote branches
+
+1.
+git branch
+
+2.
+git branch -a
+
+* Changing the original repository
+
+1.
+cd ../hello
+
+2.
+git add README
+
+git commit -m "Changed README in original repo"
+
+* Fetching changes
+
+1.
+cd ../cloned_hello
+
+git fetch
+
+git hist --all
+
+* Merging pulled changes
+
+1.
+git merge origin/master
+
+2.
+cat readme
+
+* Pulling and merging changes
+
+1.
+git pull
+
+* Adding a tracking branch
+
+1.
+git branch --track style origin/style
+
+git branch -a
+
+git hist --max-count=2
+
+* Bare repos
+
+1.
+cd ..
+
+git clone --bare hello hello.git
+
+ls hello.git
+
