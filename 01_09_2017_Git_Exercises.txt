@@ -1,0 +1,46 @@
+* Adding a remote repository
+
+1.
+git remote add shared ../hello.git
+
+* Submitting changes
+
+1.
+git checkout master
+
+2.
+git add README
+
+3.
+git commit -m "Added shared comment to readme"
+
+4.
+git push shared master
+
+* Removing common changes
+
+1.
+cd ../cloned_hello
+
+2.
+git remote add shared ../hello.git
+
+3.
+git pull
+
+4.
+cat README
+
+* Placing your git repository
+
+1.
+git daemon --verbose --export-all --base-path=.
+
+2.
+git clone git://localhost/hello.git network_hello
+
+3.
+cd network_hello
+
+4.
+ls
