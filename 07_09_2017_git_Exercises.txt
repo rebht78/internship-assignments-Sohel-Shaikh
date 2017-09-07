@@ -1,0 +1,48 @@
+* Cherry Pick Git:
+
+1.
+git rebase -i overHere --solution-ordering C3,C5,C4
+
+* Grabbing just 1 commit:
+
+1. 
+git checkout master
+
+2.
+git cherry-pick C4
+
+* Juggling Commits #1:
+
+1.
+git commit
+
+2.
+git rebase -i HEAD~2
+
+3.
+git rebase caption master
+
+* Juggling Commits #2:
+
+1.
+git checkout master
+
+2.
+git cherry-pick C2
+
+3.
+git commit --amend
+
+4.
+git cherry-pick C3
+
+* Git tags:
+
+1.
+git tag v1 side~1
+
+2.
+git tag v0 master~2
+
+3.
+git checkout v1
